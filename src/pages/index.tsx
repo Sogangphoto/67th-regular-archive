@@ -4,9 +4,9 @@ import About from "./about";
 import Archive from "./archive";
 import Photographers from "./photographers";
 import Thanks from "./thanks";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-export default () => {
+const Index = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
@@ -19,3 +19,5 @@ export default () => {
     </BrowserRouter>
   );
 };
+
+export default Index;

@@ -1,13 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
-import Navigation from "../../component/Navigation";
-import styles from "./index.module.css";
-
 function Index() {
-  const TestDiv = styled.div`
-    background-color: skyblue;
-    height: ${window.outerHeight}px;
-  `;
+  // const TestDiv = styled.div`
+  //   background-color: skyblue;
+  //   height: ${window.outerHeight}px;
+  // `;
   return (
     <>
       {/* <Navigation opacityHeight={window.outerHeight} />
@@ -20,7 +15,7 @@ function Index() {
         </div>
         <div className="h-32"></div>
         <div className="w-16">
-          <img src="sogangphoto_logo.png" />
+          <img src="sogangphoto_logo.png" alt="서광회 로고" />
         </div>
       </div>
     </>
