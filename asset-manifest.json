@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/67th-regular-archive/static/css/main.f9c7a3b1.css",
+    "main.js": "/67th-regular-archive/static/js/main.838fa4db.js",
+    "index.html": "/67th-regular-archive/index.html",
+    "main.f9c7a3b1.css.map": "/67th-regular-archive/static/css/main.f9c7a3b1.css.map",
+    "main.838fa4db.js.map": "/67th-regular-archive/static/js/main.838fa4db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9c7a3b1.css",
+    "static/js/main.838fa4db.js"
+  ]
+}
