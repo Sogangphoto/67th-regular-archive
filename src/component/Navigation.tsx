@@ -47,7 +47,7 @@ const Navigation = () => {
   return (
     <>
       <NavContainer id="navigation">
-        <StyledLink to="/">서광회 67회 정기전</StyledLink>
+        <StyledLink to={to("/")}>서광회 67회 정기전</StyledLink>
         <div className="flex">
           <StyledLink isCurrentPage={isCurrentPage("about")} to={to("about")}>
             About
