@@ -1,55 +1,66 @@
-import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-const StyledLink = styled(Link)`
-  width: 200px;
-  height: 50px;
+const StyledLink = styled(Link)<{ isCurrentPage?: boolean }>`
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+
+  margin: 32px 16px;
   text-align: center;
-  line-height: 50px;
+  box-sizing: border-box;
+
+  ${(p) => (p.isCurrentPage ? "border-bottom: 3px dashed;" : "")}
 `;
 
-const NavContainer = styled.div<{
-  $opacityHeight?: number;
-  $scrollY: number;
-}>`
-  top: 0;
-  left: 0;
-  position: fixed;
+const NavContainer = styled.div`
   display: flex;
   width: 100%;
-  justify-content: flex-end;
-  border-bottom: 1px solid black;
 
-  opacity: ${(p) => (p.$opacityHeight ? p.$scrollY / p.$opacityHeight : 1)};
+  padding: 0px 16px;
+
+  justify-content: space-between;
 `;
 
-const Navigation = ({ opacityHeight }: { opacityHeight?: number }) => {
-  const [scrollY, setScrollY] = useState(0);
+const Navigation = () => {
+  const location = useLocation();
+
+  const isCurrentPage = useCallback(
+    (pathname: string) => {
+      if (location.pathname.match(pathname)) {
+        return true;
+      } else return false;
+    },
+    [location],
+  );
 
   useEffect(() => {
-    if (!opacityHeight) return;
-
-    document.addEventListener("scroll", () => {
-      if (window.scrollY < opacityHeight) {
-        setScrollY(window.scrollY);
-      }
-    });
+    console.log(location);
     return () => {};
-  }, []);
+  }, [location]);
 
   return (
     <>
-      <NavContainer
-        id="navigation"
-        $opacityHeight={opacityHeight}
-        $scrollY={scrollY}
-      >
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="about">About</StyledLink>
-        <StyledLink to="archive">Archive</StyledLink>
-        <StyledLink to="photographers">Photographers</StyledLink>
-        <StyledLink to="thanks">Thanks</StyledLink>
+      <NavContainer id="navigation">
+        <StyledLink to="/">서광회 67회 정기전</StyledLink>
+        <div className="flex">
+          <StyledLink isCurrentPage={isCurrentPage("about")} to="about">
+            About
+          </StyledLink>
+          <StyledLink isCurrentPage={isCurrentPage("archive")} to="archive">
+            Archive
+          </StyledLink>
+          <StyledLink
+            isCurrentPage={isCurrentPage("photographers")}
+            to="photographers"
+          >
+            Photographers
+          </StyledLink>
+          <StyledLink isCurrentPage={isCurrentPage("thanks")} to="thanks">
+            Thanks to
+          </StyledLink>
+        </div>
       </NavContainer>
     </>
   );
