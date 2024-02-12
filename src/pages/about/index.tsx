@@ -1,3 +1,101 @@
+import cn from "classnames";
+import { styled } from "styled-components";
+
+const arr = [
+  { text: "기유림 | 총괄 기획", span: 3, top: 5, left: 0, rotate: 10, src: "" },
+  { text: "류지원 | 총괄 기획", span: 3, top: -5, left: 0, rotate: 3, src: "" },
+  { text: "임서영 | 아카이빙", span: 2, top: 10, left: 0, rotate: 0, src: "" },
+  { text: "김지원 | 디자인", span: 2, top: 30, left: 0, rotate: -34, src: "" },
+  {
+    text: "류민우 | 프로그램 기획",
+    span: 2,
+    top: 0,
+    left: 0,
+    rotate: 0,
+    src: "",
+  },
+  { text: "임이서 | 제작부", span: 2, top: 0, left: 0, rotate: 0, src: "" },
+  { text: "이연우 | 아이디어팀", span: 2, top: 0, left: 0, rotate: 0, src: "" },
+  {
+    text: "정고은 | 아카이빙 | 웹",
+    span: 2,
+    top: 0,
+    left: 0,
+    rotate: 0,
+    src: "",
+  },
+  {
+    text: "채경서 | 프로그램기획",
+    span: 2,
+    top: 0,
+    left: 0,
+    rotate: 0,
+    src: "",
+  },
+  { text: "윤근우 | 전시 기획", span: 2, top: 0, left: 0, rotate: 0, src: "" },
+  {
+    text: "조성효 | 프로그램 기획",
+    span: 2,
+    top: 0,
+    left: 0,
+    rotate: 0,
+    src: "",
+  },
+  { text: "김준수 | 디자인", span: 2, top: 0, left: 0, rotate: 0, src: "" },
+  {
+    text: "김성민 | 작가협력 팀",
+    span: 2,
+    top: 0,
+    left: 0,
+    rotate: 0,
+    src: "",
+  },
+  { text: "신현주 | 전시 기획", span: 2, top: 0, left: 0, rotate: 0, src: "" },
+  {
+    text: "이창호 | 작가협력 팀",
+    span: 2,
+    top: 0,
+    left: 0,
+    rotate: 0,
+    src: "",
+  },
+  {
+    text: "금유현 | 디자인 | 아카이빙",
+    span: 2,
+    top: 0,
+    left: 0,
+    rotate: 0,
+    src: "",
+  },
+  { text: "형화진 | 제작부", span: 2, top: 0, left: 0, rotate: 0, src: "" },
+  {
+    text: "안현석 | 아카이빙 | 웹",
+    span: 3,
+    top: 0,
+    left: 0,
+    rotate: 0,
+    src: "",
+  },
+  { text: "장한슬 | 아이디어", span: 3, top: 0, left: 0, rotate: 0, src: "" },
+];
+
+const StyledCard = styled.div<{
+  item: {
+    top: number;
+    left: number;
+    span: number;
+    rotate: number;
+  };
+}>`
+  position: relative;
+  ${({ item }) => `
+    grid-column: span ${item.span};
+    top: ${item.top}px;
+    left: ${item.left}px;
+    rotate: ${item.rotate}deg;
+  `}
+`;
+
 function Index() {
   return (
     <div className="flex flex-col items-center text-[#444444]">
@@ -20,20 +118,13 @@ function Index() {
       <div className="mt-20 grid w-full grid-cols-6 justify-items-center gap-8 px-[48px]">
         {arr.map((item, idx) => {
           return (
-            <div
+            <StyledCard
               key={idx}
-              className={`
-                h-[300px]
-                w-[350px]
-                bg-slate-400 
-                col-span-${item.span} 
-                top-[${item.top}px]
-                left-[${item.left}px]
-                rotate-[${item.rotate}deg]
-              `}
+              className={cn("h-[300px]", "w-[350px]", "bg-slate-400")}
+              item={item}
             >
               {item.text}
-            </div>
+            </StyledCard>
           );
         })}
       </div>
