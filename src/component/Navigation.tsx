@@ -35,6 +35,10 @@ const Navigation = () => {
     [location],
   );
 
+  const to = (to: string) => {
+    return location.hash == "#archive" ? `${to}#archive` : to;
+  };
+
   useEffect(() => {
     console.log(location);
     return () => {};
@@ -45,19 +49,24 @@ const Navigation = () => {
       <NavContainer id="navigation">
         <StyledLink to="/">서광회 67회 정기전</StyledLink>
         <div className="flex">
-          <StyledLink isCurrentPage={isCurrentPage("about")} to="about">
+          <StyledLink isCurrentPage={isCurrentPage("about")} to={to("about")}>
             About
           </StyledLink>
-          <StyledLink isCurrentPage={isCurrentPage("archive")} to="archive">
-            Archive
-          </StyledLink>
+          {location.hash === "#archive" && (
+            <StyledLink
+              isCurrentPage={isCurrentPage("archive")}
+              to={to("archive")}
+            >
+              Archive
+            </StyledLink>
+          )}
           <StyledLink
             isCurrentPage={isCurrentPage("photographers")}
-            to="photographers"
+            to={to("photographers")}
           >
             Photographers
           </StyledLink>
-          <StyledLink isCurrentPage={isCurrentPage("thanks")} to="thanks">
+          <StyledLink isCurrentPage={isCurrentPage("thanks")} to={to("thanks")}>
             Thanks to
           </StyledLink>
         </div>
