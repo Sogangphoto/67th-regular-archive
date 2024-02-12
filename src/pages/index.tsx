@@ -10,7 +10,7 @@ import Navigation from "../component/Navigation";
 const Index = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <div className="h-screen bg-[#F1EFEB]">
+      <div className="min-h-screen bg-[#F1EFEB] pb-20">
         <div className="mx-auto max-w-7xl">
           <Navigation />
           <Routes>
