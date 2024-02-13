@@ -10,7 +10,6 @@ const StyledLink = styled(Link)<{ isCurrentPage?: boolean }>`
   height: 40px;
   line-height: 40px;
 
-  margin: 32px 16px;
   text-align: center;
   box-sizing: border-box;
 
@@ -40,10 +39,10 @@ const Navigation = () => {
   return (
     <div
       id="navigation"
-      className={cn("xl:flex", "xl:justify-between", "w-full", "px-8")}
+      className={cn("xl:flex", "xl:justify-between", "w-full", "px-8", "py-4")}
     >
       <StyledLink to={to("/")}>서광회 67회 정기전</StyledLink>
-      <div className="xl:flex">
+      <div className="space-x-8 xl:flex">
         <StyledLink isCurrentPage={isCurrentPage("about")} to={to("about")}>
           About
         </StyledLink>
