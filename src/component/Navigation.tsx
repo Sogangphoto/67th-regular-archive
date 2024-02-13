@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import cn from "classnames";
 
 const StyledLink = styled(Link)<{ isCurrentPage?: boolean }>`
+  display: block;
+
   font-size: 20px;
   height: 40px;
   line-height: 40px;
@@ -13,16 +16,6 @@ const StyledLink = styled(Link)<{ isCurrentPage?: boolean }>`
 
   ${(p) => (p.isCurrentPage ? "border-bottom: 3px dashed;" : "")}
 `;
-
-const NavContainer = styled.div`
-  display: flex;
-  width: 100%;
-
-  padding: 0px 16px;
-
-  justify-content: space-between;
-`;
-
 const Navigation = () => {
   const location = useLocation();
 
@@ -45,33 +38,34 @@ const Navigation = () => {
   }, [location]);
 
   return (
-    <>
-      <NavContainer id="navigation">
-        <StyledLink to={to("/")}>서광회 67회 정기전</StyledLink>
-        <div className="flex">
-          <StyledLink isCurrentPage={isCurrentPage("about")} to={to("about")}>
-            About
-          </StyledLink>
-          {location.hash === "#archive" && (
-            <StyledLink
-              isCurrentPage={isCurrentPage("archive")}
-              to={to("archive")}
-            >
-              Archive
-            </StyledLink>
-          )}
+    <div
+      id="navigation"
+      className={cn("xl:flex", "xl:justify-between", "w-full", "px-8")}
+    >
+      <StyledLink to={to("/")}>서광회 67회 정기전</StyledLink>
+      <div className="xl:flex">
+        <StyledLink isCurrentPage={isCurrentPage("about")} to={to("about")}>
+          About
+        </StyledLink>
+        {location.hash === "#archive" && (
           <StyledLink
-            isCurrentPage={isCurrentPage("photographers")}
-            to={to("photographers")}
+            isCurrentPage={isCurrentPage("archive")}
+            to={to("archive")}
           >
-            Photographers
+            Archive
           </StyledLink>
-          <StyledLink isCurrentPage={isCurrentPage("thanks")} to={to("thanks")}>
-            Thanks to
-          </StyledLink>
-        </div>
-      </NavContainer>
-    </>
+        )}
+        <StyledLink
+          isCurrentPage={isCurrentPage("photographers")}
+          to={to("photographers")}
+        >
+          Photographers
+        </StyledLink>
+        <StyledLink isCurrentPage={isCurrentPage("thanks")} to={to("thanks")}>
+          Thanks to
+        </StyledLink>
+      </div>
+    </div>
   );
 };
 export default Navigation;

@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="min-h-screen bg-[#F1EFEB] pb-20">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[390px] xl:max-w-7xl">
           <Navigation />
           <Routes>
             <Route index element={<App />} />
