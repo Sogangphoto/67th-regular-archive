@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import cn from "classnames";
@@ -28,7 +28,7 @@ const Navigation = () => {
   );
 
   const to = (to: string) => {
-    return location.hash == "#archive" ? `${to}#archive` : to;
+    return location.hash === "#archive" ? `${to}#archive` : to;
   };
 
   useEffect(() => {
