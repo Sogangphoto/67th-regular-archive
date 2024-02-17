@@ -59,8 +59,8 @@ const Navigation = () => {
           "text-center",
         )}
       >
-        <StyledLink to={to("/")} className="text-xl">
-          서광회 67회 정기전
+        <StyledLink to={to("/")} className="untaza text-xl font-semibold">
+          서광회 제67회 정기전
         </StyledLink>
         <div className="flex space-x-8">
           <StyledLink isCurrentPage={isCurrentPage("about")} to={to("about")}>

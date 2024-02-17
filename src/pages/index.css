@@ -2,9 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Stamp RSPK One";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url(../assets/fonts/StampRSPKOne-Regular.woff2) format("woff2"),
+    url(../assets/fonts/StampRSPKOne-Regular.woff) format("woff"),
+    url(../assets/fonts/StampRSPKOne-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Stamp RSPK One";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url(../assets/fonts/StampRSPKOne-Light.woff2) format("woff2"),
+    url(../assets/fonts/StampRSPKOne-Light.woff) format("woff"),
+    url(../assets/fonts/StampRSPKOne-Light.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "UnTaza";
+  src: url("https://cdn.jsdelivr.net/gh/wooin21/web/fonts/UnFont/UnTaza.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Stamp RSPK One", "UnTaza", "Pretendard", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,4 +54,16 @@ code {
 
 p {
   word-break: keep-all;
+}
+
+.stamp {
+  font-family: "Stamp RSPK One";
+}
+
+.untaza {
+  font-family: "UnTaza";
+}
+
+.pretendard {
+  font-family: "Pretendard";
 }
