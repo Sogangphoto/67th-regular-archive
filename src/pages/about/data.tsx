@@ -1,5 +1,14 @@
+import sogang from "../../assets/images/sogang_logo.png";
+
 const arr = [
-  { text: "기유림 | 총괄 기획", span: 3, top: 5, left: 0, rotate: 10, src: "" },
+  {
+    text: "기유림 | 총괄 기획",
+    span: 3,
+    top: 5,
+    left: 0,
+    rotate: 10,
+    src: sogang,
+  },
   { text: "류지원 | 총괄 기획", span: 3, top: -5, left: 0, rotate: 3, src: "" },
   { text: "임서영 | 아카이빙", span: 2, top: 10, left: 0, rotate: 0, src: "" },
   { text: "김지원 | 디자인", span: 2, top: 30, left: 0, rotate: -34, src: "" },

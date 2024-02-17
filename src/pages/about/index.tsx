@@ -48,8 +48,12 @@ function Index() {
                 "xl:w-[350px]",
                 "bg-slate-400",
                 "mx-auto",
+                "bg-no-repeat",
+                "bg-cover",
+                "bg-center",
               )}
               item={item}
+              style={{ backgroundImage: `url("${item.src}")` }}
             >
               {item.text}
             </StyledCard>
