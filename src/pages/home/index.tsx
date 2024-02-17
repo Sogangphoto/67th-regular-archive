@@ -3,7 +3,7 @@ import classNames from "classnames";
 function Index() {
   return (
     <>
-      <div className="flex">
+      <div className="flex flex-1 flex-grow">
         <div className="hidden flex-1 xl:block">
           <div className="absolute left-12 top-[420px]">
             <div className="title -z-10 w-[950px] text-[120px] leading-tight text-[#C0C0C0] blur-[8px]">
@@ -12,20 +12,37 @@ function Index() {
             </div>
           </div>
         </div>
-        <div className="relative z-10 xl:mr-16 xl:mt-24 xl:w-[500px]">
-          <div className="content space-y-4">
+        <div
+          className={classNames(
+            "xl:block",
+            "flex flex-col",
+            "justify-around",
+            "xl:justify-between",
+            "relative",
+            "z-10",
+            "mx-[30px]",
+            "xl:mr-16",
+            "xl:mt-24",
+            "xl:w-[500px]",
+          )}
+        >
+          <div className="title space-y-4 xl:mb-4">
             <div className="hidden text-2xl text-[#444444] xl:block">
               Sogang Photo 67th Exhibiton
             </div>
             <div
               className={classNames(
                 "untaza",
-                "bold",
-                "text-5xl",
-                "font-bold",
+                "text-center",
+                "xl:text-left",
+                "text-3xl",
+                "xl:text-5xl",
+                "font-extrabold",
+                "xl:font-bold",
                 "tracking-[-.15em]",
                 "text-[#444444]",
-                "drop-shadow-[-4px_4px_0_rgba(0,0,0,0.25)]",
+                "drop-shadow-[-2px_2px_0_rgba(0,0,0,0.25)]",
+                "xl:drop-shadow-[-4px_4px_0_rgba(0,0,0,0.25)]",
                 "xl:-ml-2",
               )}
             >
@@ -34,7 +51,19 @@ function Index() {
             <div className="hidden text-right text-xl font-light xl:block">
               2.28-3.3
             </div>
-            <div className="untaza text-base leading-5 xl:w-[450px]">
+          </div>
+          <div className="content space-y-4">
+            <div
+              className={classNames(
+                "untaza",
+                "text-sm",
+                "xl:text-base",
+                "leading-5",
+                "text-center",
+                "xl:text-left",
+                "xl:w-[450px]",
+              )}
+            >
               당신의 시간은 영원한가요?
               <br />
               <br />
@@ -52,8 +81,21 @@ function Index() {
             </div>
           </div>
           <div className="info">
-            <div className="leading-[22px] xl:mt-10 xl:flex">
-              <div className="flex space-x-4">
+            <div
+              className={classNames(
+                "leading-[22px]",
+                "items-end",
+                "xl:items-start",
+                "xl:mt-10",
+                "flex",
+                "flex-col",
+                "xl:flex-row",
+
+                "text-sm",
+                "xl:text-base",
+              )}
+            >
+              <div className="mb-4 flex space-x-4 xl:mb-auto">
                 <div className="text-right font-light">
                   2/28 <br />
                   2/29-3/2 <br />
@@ -65,7 +107,7 @@ function Index() {
                   9am-4pm
                 </div>
               </div>
-              <div className="untaza xl:ml-5">
+              <div className="untaza mb-2 text-right xl:mb-auto xl:ml-5 xl:text-left">
                 서울특별시 용산구 녹사평대로 150, <br />
                 용산 아트홀 1층 <br />
                 <span className="stamp font-light">
@@ -73,7 +115,7 @@ function Index() {
                 </span>
               </div>
             </div>
-            <div className="text-right tracking-[-.05em] text-[#797979] xl:mt-8">
+            <div className="text-right text-xs tracking-[-.05em] text-[#797979] xl:mt-8 xl:text-base">
               본 전시는 무료 전시입니다.
             </div>
           </div>

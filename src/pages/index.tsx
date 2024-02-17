@@ -14,7 +14,7 @@ const Index = () => {
       <div className="h-fit  bg-[#F1EFEB]">
         <div className="mx-auto flex min-h-screen max-w-[390px] flex-col xl:max-w-7xl">
           <Navigation />
-          <div className="flex-1 flex-grow">
+          <div className="flex flex-1 flex-grow flex-col">
             <Routes>
               <Route index element={<App />} />
               <Route path="about/" element={<About />} />

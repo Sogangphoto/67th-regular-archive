@@ -57,6 +57,8 @@ const Navigation = () => {
           "py-4",
           "text-xl",
           "text-center",
+          "relative",
+          "bg-[#F1EFEB]",
         )}
       >
         <StyledLink to={to("/")} className="untaza text-xl font-semibold">
@@ -96,7 +98,6 @@ const Navigation = () => {
           "pt-4",
           "justify-between",
           isOpen ? ["h-screen ", "w-screen", "fixed", "left-0", "top-0"] : "",
-          "bg-[#F1EFEB]",
         )}
       >
         <div className="mx-4 flex items-center justify-between">
