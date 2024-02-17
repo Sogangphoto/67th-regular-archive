@@ -1,12 +1,14 @@
 import "./index.css";
 import App from "./home";
-import About from "./about";
-import Archive from "./archive";
-import Photographers from "./photographers";
-import Thanks from "./thanks";
+// import About from "./about";
+// import Archive from "./archive";
+// import Photographers from "./photographers";
+// import Thanks from "./thanks";
+import Contact from "./contact";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navigation from "../component/Navigation";
 import Footer from "../component/Footer";
+import Prepare from "./prepare";
 
 const Index = () => {
   return (
@@ -17,10 +19,11 @@ const Index = () => {
           <div className="flex flex-1 flex-grow flex-col">
             <Routes>
               <Route index element={<App />} />
-              <Route path="about/" element={<About />} />
-              <Route path="archive/" element={<Archive />} />
-              <Route path="photographers/" element={<Photographers />} />
-              <Route path="thanks/" element={<Thanks />} />,
+              <Route path="about/" element={<Prepare />} />
+              <Route path="archive/" element={<Prepare />} />
+              <Route path="photographers/" element={<Prepare />} />
+              <Route path="thanks/" element={<Prepare />} />,
+              <Route path="contact/" element={<Contact />} />,
             </Routes>
           </div>
           <Footer />

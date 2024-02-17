@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import cn from "classnames";
-import { ReactComponent as HamburgerIcon } from "../assets/hamburger_icon.svg";
-import { ReactComponent as XIcon } from "../assets/x_icon.svg";
+import { ReactComponent as HamburgerIcon } from "../assets/svgs/hamburger_icon.svg";
+import { ReactComponent as XIcon } from "../assets/svgs/x_icon.svg";
 
 const StyledLink = styled(Link)<{
   isCurrentPage?: boolean;
@@ -85,6 +85,12 @@ const Navigation = () => {
           <StyledLink isCurrentPage={isCurrentPage("thanks")} to={to("thanks")}>
             Thanks to
           </StyledLink>
+          <StyledLink
+            isCurrentPage={isCurrentPage("contact")}
+            to={to("contact")}
+          >
+            Contact
+          </StyledLink>
         </div>
       </div>
 
@@ -104,7 +110,7 @@ const Navigation = () => {
         )}
       >
         <div className="mx-4 flex items-center justify-between">
-          <StyledLink to={to("/")} className="text-sm">
+          <StyledLink to={to("/")} className="text-xs">
             Sogang Photo 67th Exhibiton
           </StyledLink>
           <div onClick={() => setIsOpen(!isOpen)}>
@@ -154,6 +160,13 @@ const Navigation = () => {
             to={to("thanks")}
           >
             Thanks to
+          </StyledLink>
+          <StyledLink
+            isMobile={true}
+            isCurrentPage={isCurrentPage("contact")}
+            to={to("contact")}
+          >
+            Contact
           </StyledLink>
           <div className="h-28"></div>
         </div>
