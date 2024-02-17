@@ -1,57 +1,166 @@
-import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import cn from "classnames";
+import { ReactComponent as HamburgerIcon } from "../assets/hamburger_icon.svg";
+import { ReactComponent as XIcon } from "../assets/x_icon.svg";
 
-const StyledLink = styled(Link)`
-  width: 200px;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
-`;
-
-const NavContainer = styled.div<{
-  $opacityHeight?: number;
-  $scrollY: number;
+const StyledLink = styled(Link)<{
+  isCurrentPage?: boolean;
+  isMobile?: boolean;
 }>`
-  top: 0;
-  left: 0;
-  position: fixed;
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  border-bottom: 1px solid black;
+  display: block;
+  height: 40px;
+  line-height: 40px;
 
-  opacity: ${(p) => (p.$opacityHeight ? p.$scrollY / p.$opacityHeight : 1)};
+  box-sizing: border-box;
+
+  ${(p) => (p.isCurrentPage ? "border-bottom: 3px dashed;" : "")}
+  ${(p) =>
+    p.isMobile
+      ? "border-bottom: 3px dashed; height: 72px; padding-left: 30px; line-height: 80px; font-weight: 300;"
+      : ""}
 `;
+const Navigation = () => {
+  const location = useLocation();
 
-const Navigation = ({ opacityHeight }: { opacityHeight?: number }) => {
-  const [scrollY, setScrollY] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const isCurrentPage = useCallback(
+    (pathname: string) => {
+      if (location.pathname.match(pathname)) {
+        return true;
+      } else return false;
+    },
+    [location],
+  );
+
+  const to = (to: string) => {
+    return location.hash === "#archive" ? `${to}#archive` : to;
+  };
 
   useEffect(() => {
-    if (!opacityHeight) return;
-
-    document.addEventListener("scroll", () => {
-      if (window.scrollY < opacityHeight) {
-        setScrollY(window.scrollY);
-      }
-    });
+    setIsOpen(false);
     return () => {};
-  }, []);
+  }, [location]);
 
   return (
     <>
-      <NavContainer
+      <div
         id="navigation"
-        $opacityHeight={opacityHeight}
-        $scrollY={scrollY}
+        className={cn(
+          "hidden",
+          "xl:flex",
+          "justify-between",
+          "w-full",
+          "px-8",
+          "py-4",
+          "text-xl",
+          "text-center",
+          "relative",
+          "bg-[#F1EFEB]",
+        )}
       >
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="about">About</StyledLink>
-        <StyledLink to="archive">Archive</StyledLink>
-        <StyledLink to="photographers">Photographers</StyledLink>
-        <StyledLink to="thanks">Thanks</StyledLink>
-      </NavContainer>
+        <StyledLink to={to("/")} className="untaza text-xl font-semibold">
+          서광회 제67회 정기전
+        </StyledLink>
+        <div className="flex space-x-8">
+          <StyledLink isCurrentPage={isCurrentPage("about")} to={to("about")}>
+            About
+          </StyledLink>
+          {location.hash === "#archive" && (
+            <StyledLink
+              isCurrentPage={isCurrentPage("archive")}
+              to={to("archive")}
+            >
+              Archive
+            </StyledLink>
+          )}
+          <StyledLink
+            isCurrentPage={isCurrentPage("photographers")}
+            to={to("photographers")}
+          >
+            Photographers
+          </StyledLink>
+          <StyledLink isCurrentPage={isCurrentPage("thanks")} to={to("thanks")}>
+            Thanks to
+          </StyledLink>
+        </div>
+      </div>
+
+      <div
+        id="navigation"
+        className={cn(
+          "flex",
+          "flex-col",
+          "xl:hidden",
+          "text-[32px]",
+          "pt-4",
+          "justify-between",
+          "bg-[#F1EFEB]",
+          isOpen
+            ? ["h-screen", "w-screen", "fixed", "z-50", "left-0", "top-0"]
+            : "",
+        )}
+      >
+        <div className="mx-4 flex items-center justify-between">
+          <StyledLink to={to("/")} className="text-sm">
+            Sogang Photo 67th Exhibiton
+          </StyledLink>
+          <div onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <XIcon /> : <HamburgerIcon />}
+          </div>
+        </div>
+
+        <div
+          className={cn(
+            "flex-col text-left transition",
+            isOpen ? "flex" : "hidden",
+          )}
+        >
+          <StyledLink
+            isMobile={true}
+            isCurrentPage={isCurrentPage("/")}
+            to={to("/")}
+          >
+            Home
+          </StyledLink>
+          <StyledLink
+            isMobile={true}
+            isCurrentPage={isCurrentPage("about")}
+            to={to("about")}
+          >
+            About
+          </StyledLink>
+          {location.hash === "#archive" && (
+            <StyledLink
+              isMobile={true}
+              isCurrentPage={isCurrentPage("archive")}
+              to={to("archive")}
+            >
+              Archive
+            </StyledLink>
+          )}
+          <StyledLink
+            isMobile={true}
+            isCurrentPage={isCurrentPage("photographers")}
+            to={to("photographers")}
+          >
+            Photographers
+          </StyledLink>
+          <StyledLink
+            isMobile={true}
+            isCurrentPage={isCurrentPage("thanks")}
+            to={to("thanks")}
+          >
+            Thanks to
+          </StyledLink>
+          <div className="h-28"></div>
+        </div>
+        <div></div>
+      </div>
     </>
   );
 };
+
 export default Navigation;
