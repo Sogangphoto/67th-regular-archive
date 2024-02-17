@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import cn from "classnames";
-import { ReactComponent as HamburgerIcon } from "../assets/hamburger_icon.svg";
-import { ReactComponent as XIcon } from "../assets/x_icon.svg";
+import { ReactComponent as HamburgerIcon } from "../assets/svgs/hamburger_icon.svg";
+import { ReactComponent as XIcon } from "../assets/svgs/x_icon.svg";
 
 const StyledLink = styled(Link)<{
   isCurrentPage?: boolean;

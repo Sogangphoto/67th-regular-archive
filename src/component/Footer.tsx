@@ -1,5 +1,5 @@
-import sogang from "../assets/sogang_logo.png";
-import sogangPhoto from "../assets/sogangphoto_logo.png";
+import sogang from "../assets/images/sogang_logo.png";
+import sogangPhoto from "../assets/images/sogangphoto_logo.png";
 
 const Footer = () => {
   return (
@@ -16,7 +16,11 @@ const Footer = () => {
       </div>
       <div className="pretendard flex-grow text-center text-xs font-light leading-normal xl:text-right">
         <p>
-          <a href="https://instagram.com/sogangphoto" target={"_blank"}>
+          <a
+            href="https://instagram.com/sogangphoto"
+            rel="noreferrer"
+            target={"_blank"}
+          >
             @sogangphoto
           </a>
           <br />

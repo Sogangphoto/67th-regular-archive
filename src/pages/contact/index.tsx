@@ -16,7 +16,11 @@ function Index() {
           | <br />
         </div>
         <div>
-          <a href="https://instagram.com/sogangphoto" target={"_blank"}>
+          <a
+            href="https://instagram.com/sogangphoto"
+            rel="noreferrer"
+            target={"_blank"}
+          >
             @sogangphoto{" "}
           </a>
           <br />
