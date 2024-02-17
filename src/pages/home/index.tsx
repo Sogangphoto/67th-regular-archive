@@ -4,8 +4,15 @@ function Index() {
   return (
     <>
       <div className="flex">
-        <div className="flex-1"></div>
-        <div className="xl:mr-16 xl:mt-24 xl:w-[500px]">
+        <div className="hidden flex-1 xl:block">
+          <div className="absolute left-12 top-[420px]">
+            <div className="title -z-10 w-[950px] text-[120px] leading-tight text-[#C0C0C0] blur-[8px]">
+              <div className="text-left">Endless Time, </div>
+              <div className="text-right">The Afterglow</div>
+            </div>
+          </div>
+        </div>
+        <div className="relative z-10 xl:mr-16 xl:mt-24 xl:w-[500px]">
           <div className="content space-y-4">
             <div className="hidden text-2xl text-[#444444] xl:block">
               Sogang Photo 67th Exhibiton
