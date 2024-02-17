@@ -18,7 +18,7 @@ const StyledLink = styled(Link)<{
   ${(p) => (p.isCurrentPage ? "border-bottom: 3px dashed;" : "")}
   ${(p) =>
     p.isMobile
-      ? "border-bottom: 3px dashed; height: 72px; padding-left: 30px; line-height: 80px"
+      ? "border-bottom: 3px dashed; height: 72px; padding-left: 30px; line-height: 80px; font-weight: 300;"
       : ""}
 `;
 const Navigation = () => {
@@ -40,7 +40,7 @@ const Navigation = () => {
   };
 
   useEffect(() => {
-    console.log(location);
+    setIsOpen(false);
     return () => {};
   }, [location]);
 
@@ -92,16 +92,19 @@ const Navigation = () => {
         id="navigation"
         className={cn(
           "flex",
-          "xl:hidden",
           "flex-col",
+          "xl:hidden",
           "text-[32px]",
           "pt-4",
           "justify-between",
-          isOpen ? ["h-screen ", "w-screen", "fixed", "left-0", "top-0"] : "",
+          "bg-[#F1EFEB]",
+          isOpen
+            ? ["h-screen", "w-screen", "fixed", "z-50", "left-0", "top-0"]
+            : "",
         )}
       >
         <div className="mx-4 flex items-center justify-between">
-          <StyledLink to={to("/")} className="text-xs">
+          <StyledLink to={to("/")} className="text-sm">
             Sogang Photo 67th Exhibiton
           </StyledLink>
           <div onClick={() => setIsOpen(!isOpen)}>
@@ -115,6 +118,13 @@ const Navigation = () => {
             isOpen ? "flex" : "hidden",
           )}
         >
+          <StyledLink
+            isMobile={true}
+            isCurrentPage={isCurrentPage("/")}
+            to={to("/")}
+          >
+            Home
+          </StyledLink>
           <StyledLink
             isMobile={true}
             isCurrentPage={isCurrentPage("about")}
@@ -152,4 +162,5 @@ const Navigation = () => {
     </>
   );
 };
+
 export default Navigation;

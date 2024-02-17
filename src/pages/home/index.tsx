@@ -26,7 +26,7 @@ function Index() {
             "xl:w-[500px]",
           )}
         >
-          <div className="title space-y-4 xl:mb-4">
+          <div className="title space-y-4 xl:mb-4 xl:mt-0">
             <div className="hidden text-2xl text-[#444444] xl:block">
               Sogang Photo 67th Exhibiton
             </div>
