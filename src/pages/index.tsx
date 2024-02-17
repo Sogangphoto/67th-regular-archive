@@ -4,6 +4,7 @@ import About from "./about";
 import Archive from "./archive";
 import Photographers from "./photographers";
 import Thanks from "./thanks";
+import Contact from "./contact";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navigation from "../component/Navigation";
 import Footer from "../component/Footer";
@@ -21,6 +22,7 @@ const Index = () => {
               <Route path="archive/" element={<Archive />} />
               <Route path="photographers/" element={<Photographers />} />
               <Route path="thanks/" element={<Thanks />} />,
+              <Route path="contact/" element={<Contact />} />,
             </Routes>
           </div>
           <Footer />

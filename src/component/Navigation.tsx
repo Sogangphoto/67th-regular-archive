@@ -85,6 +85,12 @@ const Navigation = () => {
           <StyledLink isCurrentPage={isCurrentPage("thanks")} to={to("thanks")}>
             Thanks to
           </StyledLink>
+          <StyledLink
+            isCurrentPage={isCurrentPage("contact")}
+            to={to("contact")}
+          >
+            Contact
+          </StyledLink>
         </div>
       </div>
 
@@ -104,7 +110,7 @@ const Navigation = () => {
         )}
       >
         <div className="mx-4 flex items-center justify-between">
-          <StyledLink to={to("/")} className="text-sm">
+          <StyledLink to={to("/")} className="text-xs">
             Sogang Photo 67th Exhibiton
           </StyledLink>
           <div onClick={() => setIsOpen(!isOpen)}>
@@ -154,6 +160,13 @@ const Navigation = () => {
             to={to("thanks")}
           >
             Thanks to
+          </StyledLink>
+          <StyledLink
+            isMobile={true}
+            isCurrentPage={isCurrentPage("contact")}
+            to={to("contact")}
+          >
+            Contact
           </StyledLink>
           <div className="h-28"></div>
         </div>
