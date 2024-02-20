@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Helmet } from "react-helmet";
 import App from "./pages";
 
 const Root = ReactDOM.createRoot(
@@ -8,6 +9,12 @@ const Root = ReactDOM.createRoot(
 
 Root.render(
   <React.StrictMode>
+    <title>서광회 제67회 정기전 아카이빙</title>
+    <Helmet>
+      <title>서광회 제67회 정기전 아카이빙</title>
+      <meta charSet="utf-8" />
+      <meta property="og:title" content="서광회 제67회 정기전 아카이빙" />
+    </Helmet>
     <App />
   </React.StrictMode>,
 );
