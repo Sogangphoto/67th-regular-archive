@@ -7,7 +7,7 @@ const arr = [
     top: 5,
     left: 0,
     rotate: 10,
-    src: sogang,
+    src: "../../assets/images/유림.png",
   },
   { text: "류지원 | 총괄 기획", span: 3, top: -5, left: 0, rotate: 3, src: "" },
   { text: "임서영 | 아카이빙", span: 2, top: 10, left: 0, rotate: 0, src: "" },
