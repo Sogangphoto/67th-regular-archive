@@ -29,7 +29,7 @@ function Index() {
         <p className="hidden h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black lg:block">
           <span className="h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black">
             The Archive team gathered to record the entire process itself as the
-            theme of the 67th regular exhibition of Sogang Photo is time and
+            theme of the 67th regul ar exhibition of Sogang Photo is time and
             afterglow.
           </span>
           <br />

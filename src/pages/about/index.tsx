@@ -38,6 +38,9 @@ function Index() {
         </p>
       </div>
       <div className="mt-96 text-center text-7xl">Planning</div>
+      <p className="mt-7 w-[677px] text-center text-lg text-black">
+        전시 준비에 함께한 기획단입니다.
+      </p>
       <div className="mt-20 w-full px-[48px] xl:grid xl:grid-cols-6 xl:gap-8">
         {data.map((item, idx) => {
           return (
@@ -56,13 +59,12 @@ function Index() {
             >
               {" "}
               <div
-                className="h-full  bg-cover bg-center"
+                className="h-full bg-cover bg-center"
                 style={{
                   backgroundImage: `url("${item.src}")`,
                   objectFit: "cover",
                 }}
               ></div>
-              <p className="absolute bottom-0 left-0 mb-4 ml-4 ">{item.text}</p>
             </StyledCard>
           );
         })}
