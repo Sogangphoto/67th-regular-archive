@@ -44,18 +44,25 @@ function Index() {
             <StyledCard
               key={idx}
               className={cn(
-                "h-[300px]",
+                " h-[400px]",
                 "xl:w-[350px]",
-                "bg-slate-400",
                 "mx-auto",
+                "bg-contain",
                 "bg-no-repeat",
-                "bg-cover",
                 "bg-center",
+                "items-center",
               )}
               item={item}
-              style={{ backgroundImage: `url("${item.src}")` }}
             >
-              {item.text}
+              {" "}
+              <div
+                className="h-full  bg-cover bg-center"
+                style={{
+                  backgroundImage: `url("${item.src}")`,
+                  objectFit: "cover",
+                }}
+              ></div>
+              <p className="absolute bottom-0 left-0 mb-4 ml-4 ">{item.text}</p>
             </StyledCard>
           );
         })}
