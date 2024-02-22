@@ -28,7 +28,8 @@ function Index() {
           </p>
         </div>
       </div>
-      {/*  */}
+
+      {/* mobile */}
 
       <div className="block lg:hidden">
         <div className="mt-32 text-center text-4xl">
