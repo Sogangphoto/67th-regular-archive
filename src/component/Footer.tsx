@@ -24,7 +24,7 @@ const Footer = () => {
             @sogangphoto
           </a>
           <br />
-          Designed by KoEun | Developed by HyeonSeok, Koeun
+          Designed by KoEun | Developed by HyeonSeok, KoEun
           <br />
           ©SogangPhoto. All Rights Reserved
         </p>

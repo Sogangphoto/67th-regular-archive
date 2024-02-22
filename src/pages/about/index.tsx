@@ -41,7 +41,7 @@ function Index() {
       <p className="mt-7 w-[677px] text-center text-lg text-black">
         전시 준비에 함께한 기획단입니다.
       </p>
-      <div className="mt-20 w-full px-[48px] xl:grid xl:grid-cols-6 xl:gap-8">
+      <div className="mb-40 mt-20 w-full px-[48px] xl:grid xl:grid-cols-6 xl:gap-4">
         {data.map((item, idx) => {
           return (
             <StyledCard
