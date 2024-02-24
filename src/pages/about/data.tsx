@@ -53,7 +53,7 @@ const arr = [
   {
     // text: "류민우 | 프로그램 기획",
     span: 2,
-    top: 30,
+    top: 20,
     left: 0,
     rotate: 5.76,
     src: minwoo,
@@ -160,7 +160,7 @@ const arr = [
   {
     // text: "안현석 | 아카이빙 | 웹",
     span: 3,
-    top: 40,
+    top: 50,
     left: 40,
     rotate: 6.7,
     src: hyeonseok,
@@ -168,7 +168,7 @@ const arr = [
   {
     // text: "장한슬 | 아이디어",
     span: 3,
-    top: 40,
+    top: 55,
     left: 0,
     rotate: -12.86,
     src: hanseul,

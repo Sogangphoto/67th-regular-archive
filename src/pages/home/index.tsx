@@ -22,7 +22,7 @@ function Index() {
             "z-10",
             "mx-[30px]",
             "xl:mr-16",
-            "xl:mt-24",
+            "xl:mt-16",
             "xl:w-[500px]",
           )}
         >
@@ -44,10 +44,21 @@ function Index() {
                 "drop-shadow-[-2px_2px_0_rgba(0,0,0,0.25)]",
                 "xl:drop-shadow-[-4px_4px_0_rgba(0,0,0,0.25)]",
                 "xl:-ml-2",
+                "relative",
               )}
+              style={{
+                textShadow: `
+                  0.5px 0 0 #444444,
+                  0 -0.5px 0 #444444,
+                  -0.5px 0 0 #444444,
+                  0 0.5px 0 #444444,
+                  0 0 0 rgba(0,0,0,0.25)
+                `,
+              }}
             >
               영원으로 남은 시간, 여운
             </div>
+
             <div className="hidden text-right text-xl font-light xl:block">
               2.28-3.3
             </div>
@@ -56,12 +67,15 @@ function Index() {
             <div
               className={classNames(
                 "untaza",
-                "text-sm",
+                "text-xs",
+                "w-[315px]",
                 "xl:text-base",
                 "leading-5",
                 "text-center",
                 "xl:text-left",
                 "xl:w-[450px]",
+                "mt-16",
+                "xl:mt-3",
               )}
             >
               당신의 시간은 영원한가요?
@@ -91,7 +105,7 @@ function Index() {
                 "flex-col",
                 "xl:flex-row",
 
-                "text-sm",
+                "text-xs",
                 "xl:text-base",
               )}
             >

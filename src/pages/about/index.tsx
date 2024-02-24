@@ -23,7 +23,7 @@ function Index() {
   return (
     <div className="flex flex-col items-center text-[#444444]">
       <div className="mt-40 text-center text-5xl xl:text-7xl">About Us</div>
-      <div className="mt-20 text-center text-xl xl:w-[680px] xl:text-2xl">
+      <div className="mt-20 text-center text-sm xl:w-[680px] xl:text-2xl">
         <p>
           서광회는 1963년에 발족한 서강대학교의 중앙 사진 동아리로, 대한민국에서
           오랜 역사를 지닌 사진 동아리입니다. 매년 2회, 여름 신인전과 겨울
@@ -37,8 +37,8 @@ function Index() {
           이야기를 나누고 싶은 그 누구에게나 서광회는 열려있습니다.
         </p>
       </div>
-      <div className="mt-96 text-center text-7xl">Planning</div>
-      <p className="mt-7 w-[677px] text-center text-lg text-black">
+      <div className="mt-96 text-center text-5xl xl:text-7xl">Planning</div>
+      <p className="mt-7 w-[677px] text-center text-sm text-black xl:text-lg">
         전시 준비에 함께한 기획단입니다.
       </p>
       <div className="mb-40 mt-20 w-full px-[48px] xl:grid xl:grid-cols-6 xl:gap-4">
@@ -50,9 +50,6 @@ function Index() {
                 " h-[400px]",
                 "xl:w-[350px]",
                 "mx-auto",
-                "bg-contain",
-                "bg-no-repeat",
-                "bg-center",
                 "items-center",
               )}
               item={item}
