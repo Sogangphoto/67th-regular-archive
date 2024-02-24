@@ -15,7 +15,31 @@ function Index() {
     image: string;
   }
 
-  const HoverImage: React.FC<HoverImageProps> = ({ text, image }) => {
+  const HoverImageWithText: React.FC<HoverImageProps> = ({ text, image }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+      <span
+        className={`relative h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <span className="group-hover:opacity-0">{text}</span>
+        {isHovered && (
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+            {" "}
+            <img
+              src={image}
+              alt="Image"
+              style={{ width: "450px", zIndex: 1 }}
+            />
+          </div>
+        )}
+      </span>
+    );
+  };
+
+  const HoverImageWithCenter: React.FC<HoverImageProps> = ({ text, image }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -26,11 +50,18 @@ function Index() {
       >
         {text}
         {isHovered && (
-          <div className="absolute bottom-0 left-0 right-0 top-[230px] flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+          <div className="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
             <img
               src={image}
               alt="Image"
-              style={{ width: "450px", zIndex: 1 }}
+              style={{
+                width: "450px",
+                zIndex: 1,
+                position: "fixed",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
             />
           </div>
         )}
@@ -65,25 +96,25 @@ function Index() {
       </div>
       {/* PC */}
       <div className="relative flex flex-col items-center justify-start gap-[92px] p-2.5">
-        <p className="relative h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black lg:block">
-          <HoverImage text="The Archive team" image={typo} />
+        <p className="hidden h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black lg:block">
+          <HoverImageWithCenter text="The Archive team" image={typo} />
           <span className="h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black">
             {" "}
             gathered to record the entire{" "}
           </span>
 
-          <HoverImage text="process" image={process} />
+          <HoverImageWithCenter text="process" image={process} />
           <span className="h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black">
             {" "}
             itself as the theme of the 67th regular exhibition of{" "}
           </span>
-          <HoverImage text="Sogang Photo" image={sgPhoto} />
+          <HoverImageWithText text="Sogang Photo" image={sgPhoto} />
 
           <span className="h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black">
             {" "}
             is{" "}
           </span>
-          <HoverImage text="time and afterglow." image={poster} />
+          <HoverImageWithText text="time and afterglow." image={poster} />
 
           <br />
           <br />
@@ -99,9 +130,9 @@ function Index() {
               We don’t process the exhibition but neatly records and delivers
               raw materials, and ultimately helps the{" "}
             </span>
-            <HoverImage text="Plannig team" image={process3} />
-            <HoverImage text="- Photographers" image={photographers} />
-            <HoverImage text="- Visitors" image={visitors} />
+            <HoverImageWithText text="Plannig team -" image={process3} />
+            <HoverImageWithText text="Photographers " image={photographers} />
+            <HoverImageWithCenter text="- Visitors" image={visitors} />
             <span className="h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black">
               {" "}
               to communicate freely and naturally.
@@ -112,7 +143,7 @@ function Index() {
           <span className="h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black">
             In addition,{" "}
           </span>
-          <HoverImage text="the work of the Archive" image={work} />
+          <HoverImageWithText text="the work of the Archive" image={work} />
           <span className="h-[315px] w-[1162px] flex-shrink-0 flex-grow-0 text-left text-[64px] font-light text-black">
             {" "}
             team and its traces maximize the afterglow even after the
