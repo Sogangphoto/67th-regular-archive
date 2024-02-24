@@ -21,7 +21,7 @@ import hwajin from "../../assets/images/화진2.png";
 const arr = [
   {
     span: 3,
-    top: 5,
+    top: 0,
     left: 40,
     rotate: 8.67,
 

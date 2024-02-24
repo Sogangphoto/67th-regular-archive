@@ -15,8 +15,8 @@ const StyledLink = styled(Link)<{
 
   box-sizing: border-box;
 
-  ${(p) => (p.isCurrentPage ? "border-bottom: 3px dashed;" : "")}
-  ${(p) =>
+  ${(p: any) => (p.isCurrentPage ? "border-bottom: 3px dashed;" : "")}
+  ${(p: any) =>
     p.isMobile
       ? "border-bottom: 3px dashed; height: 72px; padding-left: 30px; line-height: 80px; font-weight: 300;"
       : ""}

@@ -11,7 +11,7 @@ const StyledCard = styled.div<{
   };
 }>`
   position: relative;
-  ${({ item }) => `
+  ${({ item }: any) => `
     grid-column: span ${item.span};
     top: ${item.top}px;
     left: ${item.left}px;
@@ -41,7 +41,7 @@ function Index() {
       <p className="mt-7 w-[677px] text-center text-sm text-black xl:text-lg">
         전시 준비에 함께한 기획단입니다.
       </p>
-      <div className="mb-40 mt-20 w-full px-[48px] xl:grid xl:grid-cols-6 xl:gap-4">
+      <div className="mb-40 mt-2 w-full px-[48px] xl:mt-20 xl:grid xl:grid-cols-6 xl:gap-4">
         {data.map((item, idx) => {
           return (
             <StyledCard
