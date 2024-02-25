@@ -1,5 +1,6 @@
 import sogang from "../assets/images/sogang_logo.png";
 import sogangPhoto from "../assets/images/sogangphoto_logo.png";
+import React from "react";
 
 const Footer = () => {
   return (
