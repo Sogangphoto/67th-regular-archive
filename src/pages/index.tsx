@@ -8,7 +8,7 @@ import Contact from "./contact";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navigation from "../component/Navigation";
 import Footer from "../component/Footer";
-import Prepare from "./prepare";
+import React from "react";
 
 const Index = () => {
   return (

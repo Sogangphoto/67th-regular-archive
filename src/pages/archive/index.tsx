@@ -8,6 +8,7 @@ import process3 from "../../assets/images/process3.jpg";
 import work from "../../assets/images/work.jpg";
 
 import { useState } from "react";
+import React from "react";
 
 function Index() {
   interface HoverImageProps {
