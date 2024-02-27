@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/67th-regular-archive/static/css/main.8cbe836f.css",
-    "main.js": "/67th-regular-archive/static/js/main.12c49007.js",
+    "main.css": "/67th-regular-archive/static/css/main.91955e3f.css",
+    "main.js": "/67th-regular-archive/static/js/main.2136f2fb.js",
     "static/media/process3.jpg": "/67th-regular-archive/static/media/process3.20b5382a1b25cf00e145.jpg",
     "static/media/sgphoto.jpg": "/67th-regular-archive/static/media/sgphoto.b339de9e45a4ff2b6c36.jpg",
     "static/media/김성준1.jpg": "/67th-regular-archive/static/media/김성준1.69a1c7082cd770fc81e0.jpg",
@@ -56,11 +56,11 @@
     "static/media/x_icon.svg": "/67th-regular-archive/static/media/x_icon.35c9f0397ee6de6560b0095b086bfe0a.svg",
     "index.html": "/67th-regular-archive/index.html",
     "static/media/hamburger_icon.svg": "/67th-regular-archive/static/media/hamburger_icon.499acaee68e7b2316d4d9e96aa587da4.svg",
-    "main.8cbe836f.css.map": "/67th-regular-archive/static/css/main.8cbe836f.css.map",
-    "main.12c49007.js.map": "/67th-regular-archive/static/js/main.12c49007.js.map"
+    "main.91955e3f.css.map": "/67th-regular-archive/static/css/main.91955e3f.css.map",
+    "main.2136f2fb.js.map": "/67th-regular-archive/static/js/main.2136f2fb.js.map"
   },
   "entrypoints": [
-    "static/css/main.8cbe836f.css",
-    "static/js/main.12c49007.js"
+    "static/css/main.91955e3f.css",
+    "static/js/main.2136f2fb.js"
   ]
 }
