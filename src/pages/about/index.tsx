@@ -11,7 +11,7 @@ const StyledCard = styled.div<{
   };
 }>`
   position: relative;
-  ${({ item }: any) => `
+  ${({ item }) => `
     grid-column: span ${item.span};
     top: ${item.top}px;
     left: ${item.left}px;
