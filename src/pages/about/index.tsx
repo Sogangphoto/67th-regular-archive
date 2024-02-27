@@ -23,7 +23,7 @@ function Index() {
   return (
     <div className="flex flex-col items-center text-[#444444]">
       <div className="mt-40 text-center text-5xl xl:text-7xl">About Us</div>
-      <div className="mt-20 text-center text-sm xl:w-[680px] xl:text-2xl">
+      <div className="mt-20 w-80 text-center text-xs xl:w-[680px] xl:text-2xl">
         <p>
           서광회는 1963년에 발족한 서강대학교의 중앙 사진 동아리로, 대한민국에서
           오랜 역사를 지닌 사진 동아리입니다. 매년 2회, 여름 신인전과 겨울

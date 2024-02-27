@@ -74,23 +74,23 @@ function Index() {
     <div>
       {/* Mobile */}
       <div className="relative block flex-col items-center justify-start gap-5 lg:hidden">
-        <p className="flex-shrink-0 flex-grow-0 text-center text-[8px] text-[#797979]">
+        <p className="mb-4 mt-4 flex-shrink-0 flex-grow-0 text-center text-[8px] text-[#797979]">
           * PC 화면을 권장합니다.
         </p>
-        <p className="w-full flex-shrink-0 flex-grow-0 text-left text-2xl font-light text-black">
+        <p className="ml-8 w-[85%] flex-shrink-0 flex-grow-0 text-left text-2xl font-light text-black">
           The Archive team gathered to record the entire process itself as the
           theme of the 67th regular exhibition of Sogang Photo is time and
           afterglow.
         </p>
-        <p className="w-full flex-shrink-0 flex-grow-0 text-left text-2xl font-light text-black">
+        <p className="w-[85%]flex-shrink-0 ml-8 flex-grow-0 text-left text-2xl font-light text-black">
           We make sure that the exhibition will last forever by keeping records.
         </p>
-        <p className="w-full flex-shrink-0 flex-grow-0 text-left text-2xl font-light text-black">
+        <p className="ml-8 w-[85%] flex-shrink-0 flex-grow-0 text-left text-2xl font-light text-black">
           We don’t process the exhibition but neatly records and delivers raw
           materials, and ultimately helps the planning team, photographers and
           visitors to communicate freely and naturally.
         </p>
-        <p className="w-full flex-shrink-0 flex-grow-0 text-left text-2xl font-light text-black">
+        <p className="ml-8 w-[85%] flex-shrink-0 flex-grow-0 text-left text-2xl font-light text-black">
           In addition, the work of the Archive team and its traces maximize the
           afterglow even after the exhibition.
         </p>
